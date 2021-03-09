@@ -4,3 +4,27 @@
     copy:
       src: site/
       dest: /var/www/default
+- hosts: host01
+  tasks:
+  - name: "replace text 01"
+    replace: 
+        path: /var/www/default/index.html
+        regexp: '61070346'
+        replace: 'welcome'
+        backup: yes
+- hosts: host02
+  tasks:
+  - name: "replace text 02"
+    replace: 
+        path: /var/www/default/index.html
+        regexp: '61070346'
+        replace: 'how are you?'
+        backup: yes
+- hosts: host03
+  tasks:
+  - name: "replace text 03"
+    replace: 
+        path: /var/www/default/index.html
+        regexp: '61070346'
+        replace: 'thank you'
+        backup: yes
